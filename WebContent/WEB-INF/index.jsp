@@ -26,83 +26,75 @@
 <body style="background-color: #d4ebf6">
 	<!-- Navbar Start -->
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><span class="navbar-brand">Pulppy
-					Entertainment</span></li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search"
-				aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
-	</div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><span class="navbar-brand">Pulppy
+						Entertainment</span></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<input class="form-control mr-sm-2" type="text" placeholder="Search"
+					aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			</form>
+		</div>
 	</nav>
 	<!-- Navbar End -->
 
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<!-- Left Side Start -->
-				<div class="col-md-1"></div>
-				<div class="col-md-2">
-					<div class="list-group" id="list-tab" role="tablist">
-						<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
-						<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Movie</a>
-						<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Music</a>
-						<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Blog</a>
-					</div>
-				</div>
-				<!-- Left Side End -->
-
-				<!-- ================================================================ -->
-
-				<!-- Content Side Start -->
-				<div class="col-md-6">
-					<c:forEach items="${musicList}" var="music">
-						<div class="media">
-							<div class="media">
-								<img class="d-flex mr-3" src="${music.musicImage}"
-									alt="Generic placeholder image">
-								<div class="media-body">
-
-									<h5 class="mt-0">
-									<a href="SingelPlay?id=${music.musicID}">${music.musicName}- ${music.musicSinger}</a></h5>
-									<br /> ${music.musicDescription}
-								</div>
-							</div>
-							
-					</c:forEach>
+	<!-- Content Area -->
+	<div class="col-md-12">
+		<div class="row">
+			<!-- Left Side Start -->
+			<div class="col-md-1"></div>
+			<div class="col-md-2">
+				<div class="list-group" id="list-tab" role="tablist">
+					<a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Home</a>
+					<a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Movie</a>
+					<a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Music</a>
+					<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Blog</a>
 				</div>
 			</div>
-			<!-- Content Side End -->
-
+			<!-- Left Side End -->
 			<!-- ================================================================ -->
-
+			<!-- Content Side Start -->
+			<div class="col-md-6">
+				<c:forEach items="${musicList}" var="music">
+					<div class="media">
+						<div class="media-left">
+							<a href="SingelPlay?id=${music.musicID}">
+								<img class="d-flex mr-3" src="${music.musicImage}" alt="Generic placeholder image">
+							</a>
+						</div>
+						<div class="media-body">
+							<a href="SingelPlay?id=${music.musicID}"><h4 class="media-heading">${music.musicName} - ${music.musicSinger}</h4></a>
+							${music.musicDescription}
+						</div>
+					</div><br/>
+				</c:forEach>
+			</div>
+			<!-- Content Side End -->
+			<!-- ================================================================ -->
 			<!-- Right Side Start -->
 			<div class="col-md-2">
-				<!-- <ul class="list-group">
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-								Component 1
-									<span class="badge badge-default badge-pill">14</span>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-								Component 2
-									<span class="badge badge-default badge-pill">2</span>
-								</li>
-								<li class="list-group-item d-flex justify-content-between align-items-center">
-								Component 3
-									<span class="badge badge-default badge-pill">1</span>
-								</li>
-							</ul> -->
+				<ul class="list-group">
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+					Component 1
+						<span class="badge badge-default badge-pill">14</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+					Component 2
+						<span class="badge badge-default badge-pill">2</span>
+					</li>
+					<li class="list-group-item d-flex justify-content-between align-items-center">
+					Component 3
+						<span class="badge badge-default badge-pill">1</span>
+					</li>
+				</ul>
 			</div>
 			<div class="col-md-1"></div>
 			<!-- Right Side End -->
-
 			<!-- ================================================================ -->
 		</div>
 	</div>
-	</div>
-
+	<!-- Content Area -->
 </body>
 </html>

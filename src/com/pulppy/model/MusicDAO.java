@@ -43,9 +43,6 @@ public class MusicDAO {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		for(MusicDTO music : lstmusic){
-			System.out.println(music.getMusicName());
-		}
 		return lstmusic;
 	}
 	

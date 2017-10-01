@@ -34,7 +34,6 @@ public class SingelPlay extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idSelect=request.getParameter("id");
-		System.out.println(idSelect);
 		MusicSinglePlay singplay = new MusicSinglePlay();
 		List<MusicDTO> lstmusic= new ArrayList<MusicDTO>();
 		lstmusic = singplay.getSingleSong(idSelect);

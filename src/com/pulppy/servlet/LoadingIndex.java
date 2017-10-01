@@ -34,7 +34,6 @@ public class LoadingIndex extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("AAAA");
 		List<MusicDTO> lstmusic= new ArrayList<MusicDTO>();
 		MusicDAO musicDAO= new MusicDAO();
 		try {

@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>PulppyWeb</display-name>
   <servlet>
-    <servlet-name>LoadingPage</servlet-name>
+    <servlet-name>LoadingIndex</servlet-name>
     <servlet-class>com.pulppy.servlet.LoadingIndex</servlet-class>
     <load-on-startup>0</load-on-startup>
   </servlet>

@@ -29,10 +29,6 @@ public class LoadingIndex extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-    
-    public void init(ServletConfig config) throws ServletException {
-    	System.out.println("AAAA1");
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -47,8 +43,8 @@ public class LoadingIndex extends HttpServlet {
 			e.printStackTrace();
 		}
 		request.setAttribute("musicList", lstmusic);
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("index.jsp");
-        dispatcher.forward(request, response);
+		RequestDispatcher dispatcher = request.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

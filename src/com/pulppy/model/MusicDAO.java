@@ -23,14 +23,21 @@ public class MusicDAO {
 			PreparedStatement pstm = conn.prepareStatement(soql);
 			ResultSet rs = pstm.executeQuery();
 			while (rs.next()) {
-				int id = rs.getInt("ID");
-				String name = rs.getString("musicName");
-				String songLink = rs.getString("muiscLink");
-
+				int id = rs.getInt("musicID");
+				String musicName = rs.getString("musicName");
+				String musicSinger = rs.getString("musicSinger");
+				String musicDescription = rs.getString("musicDescription");
+				String musicLink = rs.getString("muiscLink");
+				String musicImage = rs.getString("musicImage");
+				
 				MusicDTO musicdto = new MusicDTO();
-				musicdto.setID(id);
-				musicdto.setMusicName(name);
-				musicdto.setMusicLink(songLink);
+				musicdto.setMusicID(id);
+				musicdto.setMusicName(musicName);
+				musicdto.setMusicSinger(musicSinger);
+				musicdto.setMusicDescription(musicDescription);
+				musicdto.setMusicImage(musicImage);
+				musicdto.setMusicLink(musicLink);
+				
 				lstmusic.add(musicdto);
 			}
 		} catch (Exception e) {

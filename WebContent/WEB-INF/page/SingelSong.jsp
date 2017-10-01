@@ -59,19 +59,23 @@
 
 				<!-- Content Side Start -->
 				<div class="col-md-6">
+					<!-- ================================================= -->
+					
+					<!-- ================================================== -->
 					<c:forEach items="${musicList}" var="music">
 						<div class="media">
-							<div class="media">
-								<img class="d-flex mr-3" src="${music.musicImage}"
-									alt="Generic placeholder image">
-								<div class="media-body">
+							<img class="d-flex mr-3" src="${music.musicImage}"
+								alt="Generic placeholder image">
+							<div class="media-body">
 
-									<h5 class="mt-0">
-									<a href="SingelPlay?id=${music.musicID}">${music.musicName}- ${music.musicSinger}</a></h5>
-									<br /> ${music.musicDescription}
-								</div>
+								<h5 class="mt-0">
+								<a href="SingelPlay?id=${music.musicID}">${music.musicName}- ${music.musicSinger}</a></h5>
+								<audio controls autoplay> 
+									<source src="${music.musicLink}" type="audio/mpeg">
+								</audio>
+								<br /> ${music.musicDescription}
 							</div>
-							
+						</div>
 					</c:forEach>
 				</div>
 			</div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -66,11 +67,11 @@
 								</div>
 							</div><br />
 							<div class="media">
-								<img class="d-flex mr-3" src="http://t.hdviet.com/thumbs/124x184/4199ed87937a6aed9117566bcaf3d937.jpg" alt="Generic placeholder image">
-								<div class="media-body">
-									<h5 class="mt-0">Media heading</h5>
-									Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-								</div>
+								<c:forEach items="${musicList}" var="music" >
+				          			<tr>
+						             <td>${music.musicName}</td>
+						         	</tr>
+					       		</c:forEach>
 							</div>
 						</div>
 						<!-- Content Side End -->
@@ -101,5 +102,6 @@
 					</div>
 				</div>
 			</div>
+			 
 	</body>
 </html>

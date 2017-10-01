@@ -9,15 +9,11 @@ import java.util.List;
 import com.pulppy.bean.MusicDTO;
 import com.pulppy.connection.MysqlConnection;
 
-
-public class MusicDAO {
-	public static MusicDTO musicDTO;
-	MusicDTO music = new MusicDTO();
-	
-	public List<MusicDTO> getAllSong(){
+public class MusicSinglePlay {
+	public List<MusicDTO> getSingleSong(String ID){
 		List<MusicDTO> lstmusic= new ArrayList<MusicDTO>();
 		try {
-			String soql = "Select * from Music__t ";
+			String soql = "Select * from Music__t where musicID =" + Integer.parseInt(ID);
 			MysqlConnection sqlconn = new MysqlConnection();
 			Connection conn = sqlconn.getMySQLConnection();
 			PreparedStatement pstm = conn.prepareStatement(soql);
@@ -44,16 +40,5 @@ public class MusicDAO {
 			// TODO: handle exception
 		}
 		return lstmusic;
-	}
-	
-	public static void main(String[] args) {
-		MusicDAO a = new MusicDAO();
-		System.out.println(a.getAllSong());
-		List<MusicDTO> lstmusic= new ArrayList<MusicDTO>();
-		lstmusic = a.getAllSong();
-		for(MusicDTO music : lstmusic){
-			System.out.println(music.getMusicName());
-		}
-		
 	}
 }
